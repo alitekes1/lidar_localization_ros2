@@ -38,12 +38,12 @@ PCLLocalization::PCLLocalization(const rclcpp::NodeOptions & options)
   declare_parameter("enable_debug", false);
   
 
-  declare_parameter("threshold_x", 0.0);
-  declare_parameter("threshold_y", 0.0);
-  declare_parameter("threshold_z", 0.0);
-  declare_parameter("threshold_roll", 0.0);
-  declare_parameter("threshold_pitch", 0.0);
-  declare_parameter("threshold_yaw", 0.0);
+  declare_parameter("threshold_x", 0.15);
+  declare_parameter("threshold_y", 0.15);
+  declare_parameter("threshold_z", 0.15);
+  declare_parameter("threshold_roll", 0.5);
+  declare_parameter("threshold_pitch", 0.5);
+  declare_parameter("threshold_yaw", 0.5);
 }
 
 using CallbackReturn = rclcpp_lifecycle::node_interfaces::LifecycleNodeInterface::CallbackReturn;
