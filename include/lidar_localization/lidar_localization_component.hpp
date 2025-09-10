@@ -7,7 +7,6 @@
 
 #include <pcl/registration/ndt.h>
 #include <pcl/registration/gicp.h>
-#include <pcl/io/ply_io.h>
 
 #include <tf2/transform_datatypes.h>
 #include <tf2/utils.h>
@@ -117,15 +116,21 @@ public:
   double initial_pose_qy_;
   double initial_pose_qz_;
   double initial_pose_qw_;
-
+  
   bool use_odom_{false};
   double last_odom_received_time_;
   bool use_imu_{false};
   bool enable_debug_{false};
-  bool enable_map_odom_tf_{false};
 
   int ndt_num_threads_;
   int ndt_max_iterations_;
+
+  double threshold_x_;
+  double threshold_y_;
+  double threshold_z_;
+  double threshold_roll_;
+  double threshold_pitch_;
+  double threshold_yaw_;
 
   // imu
   LidarUndistortion lidar_undistortion_;

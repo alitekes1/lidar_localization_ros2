@@ -83,6 +83,8 @@ install(TARGETS
 install(DIRECTORY
   launch
   param
+  rviz
+  pcd_datasets
   DESTINATION share/${PROJECT_NAME}/
 )
 
