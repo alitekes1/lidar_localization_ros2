@@ -66,3 +66,9 @@ ros2 bag play your_bag_file/
 |use_odom|bool|false|whether odom is used or not for initial attitude in point cloud registration|
 |use_imu|bool|false|whether 9-axis imu is used or not for point cloud distortion correction|
 |enable_debug|bool|false|whether debug is done or not|
+|threshold_x|double|0.15|log threshold|
+|threshold_y|double|0.15|log threshold|
+|threshold_z|double|0.15|log threshold|
+|threshold_roll|double|0.5|log threshold|
+|threshold_pitch|double|0.5|log threshold|
+|threshold_yaw|double|0.5|log threshold|
