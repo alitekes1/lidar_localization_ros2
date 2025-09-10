@@ -23,6 +23,22 @@ Green: path, Red: map
 /path (nav_msgs/Path)  
 /initial_map (sensor_msgs/PointCloud2)(when `use_pcd_map` is true)  
 
+## Install
+```
+cd your_ws/src
+git clone https://github.com/alitekes1/lidar_localization_ros2.git
+git clone https://github.com/rsasaki0109/ndt_omp_ros2.git
+cd ..
+colcon build 
+```
+
+## Launch
+Before running, put your pcd data into your `pcd_datas` directory and  
+edit the `map_path` parameter of `localization.yaml` in the `param` directory accordingly.
+```
+ros2 launch lidar_localization_ros2 lidar_localization.launch.py
+ros2 bag play your_bag_file/
+```
 ## params
 
 |Name|Type|Default value|Description|
@@ -50,23 +66,3 @@ Green: path, Red: map
 |use_odom|bool|false|whether odom is used or not for initial attitude in point cloud registration|
 |use_imu|bool|false|whether 9-axis imu is used or not for point cloud distortion correction|
 |enable_debug|bool|false|whether debug is done or not|
-
-## demo
-
-demo data(ROS1) by Tier IV（The link has changed and is now broken.)  
-https://data.tier4.jp/rosbag_details/?id=212  
-To use ros1 rosbag , use [rosbags](https://pypi.org/project/rosbags/).  
-The Velodyne VLP-16 was used in this data.
-
-Before running, put `bin_tc-2017-10-15-ndmap.pcd` into your `map` directory and  
-edit the `map_path` parameter of `localization.yaml` in the `param` directory accordingly.
-```
-rviz2 -d src/lidar_localization_ros2/rviz/localization.rviz
-ros2 launch lidar_localization_ros2 lidar_localization.launch.py
-ros2 bag play tc_2017-10-15-15-34-02_free_download/
-```
-
-<img src="./images/path.png" width="640px">
-
-Green: path, Red: map  
-(the 5x5 grids in size of 50m × 50m)
